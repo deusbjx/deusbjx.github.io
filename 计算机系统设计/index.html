@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://fff.com">
-  <title>Archives: 2020/8 | fffのblog</title>
+  <title>计算机系统设计随笔 | fffのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123456">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fffのblog">
-<meta property="og:url" content="http://fff.com/archives/2020/08/index.html">
+  <meta name="description" content="面向IA-32的模拟器”NEMU”设计2020&#x2F;9&#x2F;11.什么是NEMU计算机系统栈    计网本身为庞大的计算机系统 NES Emulator(红白机,运行游戏模拟器) &lt;-&gt; NEMU(运行X86系统模拟器) 理解”程序如何在计算机上运行”的根本途径是实现一个完整的计算机系统 NEMU任务: ——功能完备的IA-32全系统模拟器 ——4个连贯实验内容  简易调试器(调试模拟器上程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机系统设计随笔">
+<meta property="og:url" content="http://fff.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="fffのblog">
-<meta property="og:description" content="123456">
+<meta property="og:description" content="面向IA-32的模拟器”NEMU”设计2020&#x2F;9&#x2F;11.什么是NEMU计算机系统栈    计网本身为庞大的计算机系统 NES Emulator(红白机,运行游戏模拟器) &lt;-&gt; NEMU(运行X86系统模拟器) 理解”程序如何在计算机上运行”的根本途径是实现一个完整的计算机系统 NEMU任务: ——功能完备的IA-32全系统模拟器 ——4个连贯实验内容  简易调试器(调试模拟器上程序">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-29T00:30:00.000Z">
+<meta property="article:modified_time" content="2020-09-01T05:56:35.455Z">
 <meta property="article:author" content="deusbjx">
-<meta property="article:tag" content="testBlog">
+<meta property="article:tag" content="&lt;note&gt;">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="fffのblog" type="application/atom+xml">
@@ -153,36 +155,78 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-计算机系统设计" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
-  	<time datetime="2020-08-29T00:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-29</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">计算机系统设计随笔</a>
+    <h1 class="article-title" itemprop="name">
+      计算机系统设计随笔
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
+  	<time datetime="2020-08-29T00:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="面向IA-32的模拟器”NEMU”设计"><a href="#面向IA-32的模拟器”NEMU”设计" class="headerlink" title="面向IA-32的模拟器”NEMU”设计"></a>面向IA-32的模拟器”NEMU”设计</h2><h3 id="2020-9-1"><a href="#2020-9-1" class="headerlink" title="2020/9/1"></a>2020/9/1</h3><h4 id="1-什么是NEMU"><a href="#1-什么是NEMU" class="headerlink" title="1.什么是NEMU"></a>1.什么是NEMU</h4><p>计算机系统栈</p>
+<img>
+
+<p> 计网本身为庞大的计算机系统</p>
+<p>NES Emulator(红白机,运行游戏模拟器) &lt;-&gt; NEMU(运行X86系统模拟器)</p>
+<p>理解”程序如何在计算机上运行”的根本途径是实现一个完整的计算机系统</p>
+<p>NEMU任务:</p>
+<p>——功能完备的IA-32全系统模拟器</p>
+<p>——4个连贯实验内容</p>
+<ul>
+<li>简易调试器(调试模拟器上程序) &lt;-&gt;gdb(调试NEMU本身) </li>
+<li>指令系统</li>
+<li>存储管理</li>
+<li>中断与I/O</li>
+</ul>
+<p>开发工具: vim + ctags(wine+source insight) + tmux</p>
+<p>版本控制工具: git</p>
+<ul>
+<li>开发过程的跟踪</li>
+<li>工程版本的控制</li>
+</ul>
+<p>NEMU启动和模拟运行环境</p>
+<p>int (<em>handler) (char\</em>):函数指针,传入char*返回int</p>
+<h4 id="2-实验内容"><a href="#2-实验内容" class="headerlink" title="2.实验内容"></a>2.实验内容</h4><h4 id="3-实验环境和相关工具"><a href="#3-实验环境和相关工具" class="headerlink" title="3.实验环境和相关工具"></a>3.实验环境和相关工具</h4><h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>sc阿里嘎多<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -194,84 +238,132 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://fff.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/my-first-blog/" class="archive-article-date">
-  	<time datetime="2020-08-28T15:46:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/my-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">my_first_blog</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/my-first-blog/">my_first_blog</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2"><test></a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/hello-world/" class="archive-article-date">
-  	<time datetime="2020-08-28T13:59:28.976Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/hello-world/">Hello World</a>
-    </h1>
+  <div id="SOHUCS" sid="计算机系统设计" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://fff.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/",
+  owner: 'deusbjx',
+  repo: 'yilia-plus-demo',
+  oauth: {
+    client_id: '11937b4b4dbacc90f9a0',
+    client_secret: 'ab967f1f0b8b7a0e77ef4fa094fa34fcae54f2f2',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -300,8 +392,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
