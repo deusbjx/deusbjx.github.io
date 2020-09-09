@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://fff.com">
-  <title>c语言指针的一些坑 | fffのblog</title>
+  <title>c语言的一些坑 | fffのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="练习c语言时出现的一些问题(百度上容易找不到)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c语言指针的一些坑">
+<meta property="og:title" content="c语言的一些坑">
 <meta property="og:url" content="http://fff.com/c%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/index.html">
 <meta property="og:site_name" content="fffのblog">
 <meta property="og:description" content="练习c语言时出现的一些问题(百度上容易找不到)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-05T07:47:34.000Z">
-<meta property="article:modified_time" content="2020-09-05T07:58:54.314Z">
+<meta property="article:modified_time" content="2020-09-06T05:34:10.690Z">
 <meta property="article:author" content="deusbjx">
 <meta property="article:tag" content="-c语言 -指针">
 <meta name="twitter:card" content="summary">
@@ -168,7 +168,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      c语言指针的一些坑
+      c语言的一些坑
     </h1>
   
 
@@ -207,6 +207,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> * <span class="title">convert</span><span class="params">(<span class="keyword">char</span> * s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> ans[<span class="number">10000</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    ans[i] = s[j]; <span class="comment">//i与j均为非负整数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>对于整个字符串的数据传递则使用<strong>strcpy</strong>与<strong>strncpy</strong>函数，具体用法可查阅百度</p>
+<h3 id="二、关于switch的问题"><a href="#二、关于switch的问题" class="headerlink" title="二、关于switch的问题"></a>二、关于switch的问题</h3><p>c语言的switch语句在使用时不允许定义新的变量</p>
 
       
 	  
@@ -358,7 +359,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%BF%94%E5%9B%9E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">一、返回字符串函数问题</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%BF%94%E5%9B%9E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">一、返回字符串函数问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%85%B3%E4%BA%8Eswitch%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">二、关于switch的问题</span></a></li></ol>
                     </div>
                 </span>
             </div>

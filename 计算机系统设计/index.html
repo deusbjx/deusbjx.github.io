@@ -16,7 +16,7 @@
 <meta property="og:description" content="面向IA-32的模拟器”NEMU”设计">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-29T00:30:00.000Z">
-<meta property="article:modified_time" content="2020-09-04T01:39:58.514Z">
+<meta property="article:modified_time" content="2020-09-08T06:10:04.005Z">
 <meta property="article:author" content="deusbjx">
 <meta property="article:tag" content="note">
 <meta property="article:tag" content="NEMU">
@@ -194,7 +194,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
         <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91IA-32%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%9DNEMU%E2%80%9D%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">面向IA-32的模拟器”NEMU”设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-1"><span class="toc-number">1.1.</span> <span class="toc-text">2020&#x2F;9&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFNEMU"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.什么是NEMU</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.实验内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.实验环境和相关工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.</span></a></li></ol></li></ol></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91IA-32%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%9DNEMU%E2%80%9D%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">面向IA-32的模拟器”NEMU”设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-1"><span class="toc-number">1.1.</span> <span class="toc-text">2020&#x2F;9&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFNEMU"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.什么是NEMU</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.实验内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.实验环境和相关工具</span></a></li></ol></li></ol></li></ol>
          </div>
    <script type="text/javascript">
     function showToc(){
@@ -240,11 +240,43 @@
 </ul>
 <p>NEMU启动和模拟运行环境</p>
 <p>int (<em>handler) (char\</em>):函数指针,传入char*返回int</p>
-<p>i386指令格式</p>
+<p>i386指令格式:右向左</p>
 <p>r/m -&gt; register/memory /r表示后面跟一个ModR/M字节</p>
 <p>ib,iw,id-&gt;立即数，B0+rb-&gt;判断寄存器(B0对应AX,B1对应BX，B2对应CX)</p>
 <p>C6 /N-&gt;操作码扩展，中间的三位Mod字段，判断操作需要考虑</p>
-<h4 id="2-实验内容"><a href="#2-实验内容" class="headerlink" title="2.实验内容"></a>2.实验内容</h4><h4 id="3-实验环境和相关工具"><a href="#3-实验环境和相关工具" class="headerlink" title="3.实验环境和相关工具"></a>3.实验环境和相关工具</h4><h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4>
+<p>指令执行流程:取址-&gt;译码-&gt;执行(三级处理器结构)</p>
+<p>NEMU指令周期——译码ID</p>
+<ol>
+<li>确定是哪一条指令的哪一种形式</li>
+<li>确定操作数</li>
+</ol>
+<p>move_i2r_v:表示move immediate to register，v表示16位或32位，b表示8位(byte)</p>
+<p>move.c，move.h，mov-template.h</p>
+<p>printf设置打印字体颜色</p>
+<p>整数表示实数，此表示方法记为float-&gt;精度和表示范围下降</p>
+<p>float加减法可直接采用整数加减法</p>
+<p>ELF目标文件:可重定位目标文件和可执行目标文件</p>
+<ul>
+<li>节(section)为ELF文件中具有相同特征的最小处理单位</li>
+<li>.text节:代码部分</li>
+<li>.rodata节:只读数据部分，如</li>
+<li>.data节:已初始化的全局变量</li>
+<li>.bss节:未初始化全局变量，不占用磁盘空间</li>
+<li>ELF头:ELF文件结构相关说明信息</li>
+<li>节头表</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">readelf -a add <span class="comment">//查看ELF文件所有信息</span></span><br><span class="line">man <span class="number">5</span> elf</span><br></pre></td></tr></table></figure>
+
+<p>ELF文件头:7f 45 4c</p>
+<p>ELF符号:全局变量，static，函数</p>
+<h4 id="2-实验内容"><a href="#2-实验内容" class="headerlink" title="2.实验内容"></a>2.实验内容</h4><p><strong>(1)NEMU调试器</strong></p>
+<p><strong>(2)NEMU指令执行</strong></p>
+<p>重点关注cpu，宏定义函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> make_helper(name) int name(swaddr_t eip)&#123;</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">make_helper(exec)=&gt;</span><br><span class="line"><span class="keyword">int</span> exec(<span class="keyword">swaddr_t</span> eip)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-实验环境和相关工具"><a href="#3-实验环境和相关工具" class="headerlink" title="3.实验环境和相关工具"></a>3.实验环境和相关工具</h4>
       
 	  
        
@@ -412,7 +444,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91IA-32%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%9DNEMU%E2%80%9D%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">面向IA-32的模拟器”NEMU”设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-1"><span class="toc-number">1.1.</span> <span class="toc-text">2020&#x2F;9&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFNEMU"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.什么是NEMU</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.实验内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.实验环境和相关工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91IA-32%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%9DNEMU%E2%80%9D%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">面向IA-32的模拟器”NEMU”设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-1"><span class="toc-number">1.1.</span> <span class="toc-text">2020&#x2F;9&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFNEMU"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.什么是NEMU</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.实验内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.实验环境和相关工具</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
