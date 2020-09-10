@@ -99,6 +99,11 @@
 </div>
 </div>
 
+      <div class="hamburger" onclick="animateMenu(this)">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -691,4 +696,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </div>
   </div>
 </body>
+<!-- 添加折叠按钮脚本 -->
+<script>
+	var hide = false;
+	function animateMenu(x) {
+			x.classList.toggle("animate");
+			if(hide == false){
+					$(".left-col").css('display', 'none');
+          $(".mid-col").css("left", '10px');
+          $(".hamburger").css('left', '4px');
+					hide = true;
+			}else{
+					$(".left-col").css('display', '');
+          $(".mid-col").css("left", '300px');
+          $(".hamburger").css('left', '260px');
+					hide = false;
+			}
+	}
+</script>
+<!-- 添加折叠按钮脚本 -->
 </html>

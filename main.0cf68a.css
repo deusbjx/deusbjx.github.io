@@ -369,7 +369,7 @@ body {
   color: #333;
   min-height: 100%;
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-  url('https://i.loli.net/2020/09/09/NGCkTM5AYZKpwXu.jpg') no-repeat 0% 0%/ cover;
+  url('https://i.loli.net/2020/09/10/DqPewrRunZ7fNhv.jpg') no-repeat 0% 0%/ cover;
 }
 
 article,
@@ -947,7 +947,7 @@ html {
 }
 
 .left-col .intrude-less {
-  width: 76%;
+  width: 85%;
   text-align: center;
   margin: 112px auto 0
 }
@@ -956,21 +956,21 @@ html {
   width: 100%;
   height: 300px;
   position: relative;
-  border-bottom: 1px solid color-border
+  border-bottom: 4px solid color-border
 }
 
 .left-col #header a {
-  color: #696969
+  color: #e63d3d
 }
 
 .left-col #header a:hover {
-  color: #b0a0aa
+  color: #374dca
 }
 
 .left-col #header .header-subtitle {
   text-align: center;
-  color: #999;
-  font-size: 14px;
+  color: #1796d1;
+  font-size: 20px;
   line-height: 25px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -998,12 +998,12 @@ html {
 }
 
 .left-col #header .header-menu li a {
-  font-size: 14px;
+  font-size: 20px;
   min-width: 300px
 }
 
 .left-col #header .header-smart-menu {
-  font-size: 12px;
+  font-size: 13px;
   margin-bottom: 20px
 }
 
