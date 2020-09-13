@@ -930,8 +930,8 @@ html {
 }
 
 .left-col {
-  /* background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('http://bucket836.oss-cn-shenzhen.aliyuncs.com/wallpaper/381535373.jpeg') no-repeat 0% 20%/ cover; */
-  background : rgba(255,255,255,.5);
+  background: linear-gradient(rgba(36, 37, 48, 0), rgba(60, 65, 77, 0.5)), url('https://i.loli.net/2020/09/13/To4hHtcZG8w2zC7.jpg') no-repeat 0% 20%/ cover;
+  /* background : rgba(255,255,255,.5); */
   width: 300px;
   position: fixed;
   opacity: 1;
@@ -960,16 +960,16 @@ html {
 }
 
 .left-col #header a {
-  color: #e63d3d
+  color: #fcfcfc
 }
 
 .left-col #header a:hover {
-  color: #374dca
+  color: #1636d4
 }
 
 .left-col #header .header-subtitle {
   text-align: center;
-  color: #1796d1;
+  color: #d35151;
   font-size: 20px;
   line-height: 25px;
   overflow: hidden;
@@ -980,7 +980,7 @@ html {
 }
 
 .left-col #header .header-menu {
-  font-weight: 300;
+  font-weight: 200;
   line-height: 31px;
   text-transform: uppercase;
   float: none;
@@ -998,7 +998,7 @@ html {
 }
 
 .left-col #header .header-menu li a {
-  font-size: 20px;
+  font-size: 18px;
   min-width: 300px
 }
 
@@ -1017,7 +1017,7 @@ html {
 
 .left-col #header .profilepic {
   display: block;
-  border: 5px solid #fff;
+  border: 5px solid rgb(6, 196, 243);
   border-radius: 300px;
   width: 128px;
   height: 128px;
