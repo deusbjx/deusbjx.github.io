@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/9 | fffのblog</title>
+  <title>Vue学习笔记 | fffのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Share Happiness">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fffのblog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/09/index.html">
+  <meta name="description" content="学习vue时的一些不太容易理解的地方，主要针对网上没有传授的通过自己理解的东西">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue学习笔记">
+<meta property="og:url" content="http://yoursite.com/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="fffのblog">
-<meta property="og:description" content="Share Happiness">
+<meta property="og:description" content="学习vue时的一些不太容易理解的地方，主要针对网上没有传授的通过自己理解的东西">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-10-11T02:58:33.000Z">
+<meta property="article:modified_time" content="2020-10-11T03:39:49.434Z">
 <meta property="article:author" content="deusbjx">
-<meta property="article:tag" content="fff">
+<meta property="article:tag" content="-前端 -学习笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="fffのblog" type="application/atom+xml">
@@ -170,341 +172,268 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vue学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue学习笔记
+    </h1>
+  
+
+        
+        <a href="/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-10-11T02:58:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
+</a>
+        
+      </header>
+	  
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>学习vue时的一些不太容易理解的地方，主要针对网上没有传授的通过自己理解的东西</strong></p>
+<a id="more"></a>
+
+<p>最近做项目制要看vue源码，之前也一直想学前端，正好就学了一下。里面有些经验对于前端大牛可能有些过于弱智，如果觉得没帮助可以直接右上角X就行。</p>
+<h4 id="1-初识Vue"><a href="#1-初识Vue" class="headerlink" title="1.初识Vue"></a>1.初识Vue</h4><p>初看了一下，Vue的框架代码和博客的代码框架十分相似，主体存储在src文件夹中，一般后缀名为<strong>.vue</strong>。Vue整体涵盖了Javascript与HTML的绝大多数语法，如果之前有学习过这两部分代码的大牛估计上手极快。Vue的运行和博客也十分类似，在git bush中使用命令<strong>npm run dev</strong>，然后在本地预览运行(目录为含.gitxxx的那个)。</p>
+<h4 id="2-Vue的代码理解"><a href="#2-Vue的代码理解" class="headerlink" title="2.Vue的代码理解"></a>2.Vue的代码理解</h4><p>Vue的代码主要基于JS与HTML，里面有些定义可能在JS与HTML里都讲过，由于本蒟蒻后两者都没有系统学过，所以讲一些真·纯萌新知识。</p>
+<ul>
+<li><p><strong>{ { } }数据绑定，文本插值</strong></p>
+<p>在Vue里，到处都可见{ { } }，一般定义在div标签里，这里存储的是展示在前端界面上的内容，里面的是变量名，一般这一部分定义在html部分，后面会紧跟随着实现其内容的script脚本部分。脚本部分里一般用</p>
+<p><strong>el:#app</strong>的形式标注实现的具体类(与div中的id对应)，后面的data部分会将{ { } }对应的每一个变量均具体实现，针对v-bind，v-model等用法请参见百度。</p>
+</li>
+</ul>
+
+      
+	  
+       
+         <div class="essayending">
+           <div>
+            <div style="text-align:center;color: #ccc;font-size:22px;">
+            <br/>
+            <br/>
+ -------------Thanks a lot <i class="fa fa-paw"></i>for your watch!-------------
+            <br/>
+            <br/>
+             <br/>
+             <br/>
+            </div>
+           </div>
+         </div>
+         
+
+	   
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              ￥
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>sc阿里嘎多<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2020-09-23T05:55:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E9%9A%8F%E7%AC%94/">图像处理随笔</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-图像处理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-前端 -学习笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-09-22T05:31:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E9%9A%8F%E7%AC%94/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">图像处理随笔</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">神经网络与深度学习课堂随笔</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-人工智能</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%88%9D%E8%AF%86Vue"><span class="toc-number">1.</span> <span class="toc-text">1.初识Vue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Vue%E7%9A%84%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3"><span class="toc-number">2.</span> <span class="toc-text">2.Vue的代码理解</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2020-09-21T10:41:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/">数据仓库与数据挖掘课堂随笔</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-数据挖掘</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/%E5%AE%89%E5%85%A8%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2020-09-21T02:28:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/%E5%AE%89%E5%85%A8%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/">安全软件工程课堂随笔</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-安全 -软件工程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2020-09-21T00:34:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/">软件工程课堂随笔</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-课堂笔记 -软件工程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/himqtt%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-09-16T03:43:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/himqtt%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">himqtt阅读笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-防火墙 -物联网 -c语言框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习随笔-项目分析//" class="article-tag-list-link color2">-学习随笔 -项目分析</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/c%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/" class="archive-article-date">
-  	<time datetime="2020-09-05T07:47:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-05</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/c%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/">c语言的一些坑</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-c语言 -指针</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/git_debug/" class="archive-article-date">
-  	<time datetime="2020-09-02T07:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/git_debug/">git commit出现file is empty的bug以及解决办法</a>
-    </h1>
+  <div id="SOHUCS" sid="Vue学习笔记" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">debug</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  <!-- 
+  
+      <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+var gitalk = new Gitalk({
+  clientID: '2b9885e8772425075804',
+  clientSecret: '6cd48deede4dd9e799772280e2ddb784561e7c4b',
+  repo: 'blog_comment',
+  owner: 'deusbjx',
+  admin: ['ffff'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: true
+})
+
+gitalk.render('gitalk-container')
+</script>
+   -->
+  
+    <div id="gitalk-container"></div>
+    <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+var gitalk = new Gitalk({
+  clientID: '2b9885e8772425075804',
+  clientSecret: '6cd48deede4dd9e799772280e2ddb784561e7c4b',
+  repo: 'blog_comment',
+  owner: 'deusbjx',
+  admin: ['ffff'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: true
+})
+
+gitalk.render('gitalk-container')
+</script>
+  
 
 
           </div>
@@ -540,8 +469,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
