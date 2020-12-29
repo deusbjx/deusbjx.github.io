@@ -16,7 +16,7 @@
 <meta property="og:description" content="git本地项目打包到远程的一些经验，如有未理解或实际中出现了其他问题请自行百度">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-10-25T02:09:02.000Z">
-<meta property="article:modified_time" content="2020-10-25T02:44:14.651Z">
+<meta property="article:modified_time" content="2020-12-29T04:40:05.963Z">
 <meta property="article:author" content="deusbjx">
 <meta property="article:tag" content="-git">
 <meta name="twitter:card" content="summary">
@@ -202,30 +202,23 @@
       
         <p><strong>git本地项目打包到远程的一些经验，如有未理解或实际中出现了其他问题请自行百度</strong></p>
 <a id="more"></a>
-
 <p>git远程提交的所有命令都执行在有git环境的git终端内</p>
 <p>git在远程提交前，需要在本地建立分支，本地建立方式使用如下语句进行，也可使用git branch</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b origin(可替换的分支名)</span><br></pre></td></tr></table></figure>
-
-<p>git远程提交采用git remote命令，通过下面语句建立远程分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin(替换为想建立的分支名) git@github.com/git用户名/仓库名字.git</span><br></pre></td></tr></table></figure>
-
+<p>git远程提交采用git remote命令，通过下面语句建立远程分支，注意用”:”</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin(替换为想建立的分支名) git@github.com:git用户名/仓库名字.git</span><br></pre></td></tr></table></figure>
 <p>然后使用下面语句将项目所有代码打包在一起，其他打包方式请自行查阅百度</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .(-A)</span><br></pre></td></tr></table></figure>
-
 <p>然后使用以下命令进行分支上传</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin(替换为上面建立的分支名) origin(本地打包好的分支)</span><br></pre></td></tr></table></figure>
-
 <p>此时如若未成功连接远端仓库并且提示<strong>Permission Denied</strong>时，需要进行ssh密钥配置</p>
 <p>ssh密钥可使用如下命令生成</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;github用户名&quot;</span><br></pre></td></tr></table></figure>
-
 <p>之后一路点击Enter即可</p>
 <p>生成的公钥存储在id_rsa.pub文件，<strong>不要直接打开id_rsa</strong></p>
 <p>使用cat并复制生成的公钥，然后在github上的Settings里进行设置，详情请参照百度</p>
 <p>之后使用ssh进行测试性连接，语句如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
 <p>提示<strong>Hello XXX！You’ve successfully ······</strong>代表连接成功</p>
 <p>此时重新进行git add与git push即可成功，语句和上面相同</p>
 
