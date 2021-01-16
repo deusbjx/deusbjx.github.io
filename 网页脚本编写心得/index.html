@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: -c语言 -指针 | fffのblog</title>
+  <title>网页脚本编写心得 | fffのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Share Happiness">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fffのblog">
-<meta property="og:url" content="http://yoursite.com/tags/c%E8%AF%AD%E8%A8%80-%E6%8C%87%E9%92%88/index.html">
+  <meta name="description" content="学习编写及使用网页JS脚本时的一些经验，主要针对一些自己遇到而百度上没有明确说明的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网页脚本编写心得">
+<meta property="og:url" content="http://yoursite.com/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/index.html">
 <meta property="og:site_name" content="fffのblog">
-<meta property="og:description" content="Share Happiness">
+<meta property="og:description" content="学习编写及使用网页JS脚本时的一些经验，主要针对一些自己遇到而百度上没有明确说明的">
 <meta property="og:locale">
+<meta property="og:image" content="http://yoursite.com/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/myblog/source/_posts/网页脚本编写心得/1.png">
+<meta property="og:image" content="http://yoursite.com/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/myblog/source/_posts/网页脚本编写心得/2.png">
+<meta property="article:published_time" content="2021-01-16T11:50:01.000Z">
+<meta property="article:modified_time" content="2021-01-16T12:25:25.027Z">
 <meta property="article:author" content="deusbjx">
-<meta property="article:tag" content="fff">
+<meta property="article:tag" content="-脚本工具">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/myblog/source/_posts/网页脚本编写心得/1.png">
   
     <link rel="alternative" href="/atom.xml" title="fffのblog" type="application/atom+xml">
   
@@ -170,60 +175,269 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="title-网页脚本编写心得" class="article article-type-title " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/c%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/" class="archive-article-date">
-  	<time datetime="2020-09-05T07:47:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/c%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/">c语言的一些坑</a>
+    <h1 class="article-title" itemprop="name">
+      网页脚本编写心得
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/" class="archive-article-date">
+  	<time datetime="2021-01-16T11:50:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-16</time>
+</a>
+        
+      </header>
+	  
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>学习编写及使用网页JS脚本时的一些经验，主要针对一些自己遇到而百度上没有明确说明的</strong></p>
+<a id="more"></a>
+<h4 id="1-插件工具选择"><a href="#1-插件工具选择" class="headerlink" title="1.插件工具选择"></a>1.插件工具选择</h4><p> 本文使用的网页脚本工具为油猴插件，详细的配置过程可以参考百度教程，此处不做过多叙述</p>
+<p>编写脚本的工具</p>
+<h4 id="2-脚本使用"><a href="#2-脚本使用" class="headerlink" title="2.脚本使用"></a>2.脚本使用</h4><p>以谷歌浏览器为例，点击右上角的扩展程序按钮，在其中点击配置好的插件，即可运行脚本。</p>
+<h4 id="3-脚本编写"><a href="#3-脚本编写" class="headerlink" title="3.脚本编写"></a>3.脚本编写</h4><p>脚本编写主要使用的语言为Javascript，其中也包含jQuery，HTML，CSS等语言，主体仍基于JS。</p>
+<p>在进行脚本编辑时，我们使用油猴插件进行脚本的加载与创建。在这里主要进行脚本编写方面的说明。</p>
+<p>油猴插件最初会给出一个总运行脚本function，其中涵盖着’use strict’一句。其后我们可以进行在外面编写其他的函数并在此处调用而实现脚本加载。</p>
+<p>这里有一个问题(原理不知道为啥，但一定得这么调)，此处需要使用setTimeout函数来调用已写的JS函数，并为其设置相应的开始时长，时长的格式为nEm，即$n✖10^m$毫秒，如下图所示：</p>
+<p><img src="/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/myblog\source\_posts\网页脚本编写心得\1.png" alt="1610799574569"></p>
+<p>在调用的函数内部，我们如需调用其他的JS函数，以button为例，需采取的形式如下：</p>
+<p><img src="/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/myblog\source\_posts\网页脚本编写心得\2.png" alt="1610799894316"></p>
+<p>其中pj可以为我们任意编写好的函数。</p>
+
+      
+	  
+       
+         <div class="essayending">
+           <div>
+            <div style="text-align:center;color: #ccc;font-size:22px;">
+            <br/>
+            <br/>
+ -------------Thanks a lot <i class="fa fa-paw"></i>for your watch!-------------
+            <br/>
+            <br/>
+             <br/>
+             <br/>
+            </div>
+           </div>
+         </div>
+         
+
+	   
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              ￥
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>sc阿里嘎多<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-c语言 -指针</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-脚本工具</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/git%E8%BF%9C%E7%A8%8B%E4%B8%8A%E4%BC%A0%E9%A1%B9%E7%9B%AE%E5%B8%B8%E7%94%A8%E6%96%B9%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git远程上传项目常用方式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%8F%92%E4%BB%B6%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9"><span class="toc-number">1.</span> <span class="toc-text">1.插件工具选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">2.脚本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99"><span class="toc-number">3.</span> <span class="toc-text">3.脚本编写</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+  <div id="SOHUCS" sid="网页脚本编写心得" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+  
+
+  
+
+  <!-- 
+  
+      <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+var gitalk = new Gitalk({
+  clientID: '2b9885e8772425075804',
+  clientSecret: '6cd48deede4dd9e799772280e2ddb784561e7c4b',
+  repo: 'blog_comment',
+  owner: 'deusbjx',
+  admin: ['ffff'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: true
+})
+
+gitalk.render('gitalk-container')
+</script>
+   -->
+  
+    <div id="gitalk-container"></div>
+    <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+var gitalk = new Gitalk({
+  clientID: '2b9885e8772425075804',
+  clientSecret: '6cd48deede4dd9e799772280e2ddb784561e7c4b',
+  repo: 'blog_comment',
+  owner: 'deusbjx',
+  admin: ['ffff'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: true
+})
+
+gitalk.render('gitalk-container')
+</script>
+  
 
 
           </div>
@@ -259,9 +473,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
