@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>图像处理随笔 | fffのblog</title>
+  <title>计算机系统设计随笔 | fffのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2020&#x2F;9&#x2F;23图像处理系统基本组成结构  图像数字化摄备 图像处理设备 图像输出设备  图像采样：均匀采样与非均匀采样  均匀采样 采样间隔小增大数据量 采样间隔大发生信息混淆   非均匀采样  数字图像的灰度直方图  图形表示形式 数组表示形式——下标表示value，下标对应的值表示个数  图像质量：  层次 对比度（最大亮度&#x2F;最小亮度） 影响清晰度因素：亮度、对比度、大小、细微层次  像素">
+  <meta name="description" content="面向IA-32的模拟器”NEMU”设计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图像处理随笔">
-<meta property="og:url" content="http://yoursite.com/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E9%9A%8F%E7%AC%94/index.html">
+<meta property="og:title" content="计算机系统设计随笔">
+<meta property="og:url" content="http://yoursite.com/%E8%8D%89%E7%A8%BF/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="fffのblog">
-<meta property="og:description" content="2020&#x2F;9&#x2F;23图像处理系统基本组成结构  图像数字化摄备 图像处理设备 图像输出设备  图像采样：均匀采样与非均匀采样  均匀采样 采样间隔小增大数据量 采样间隔大发生信息混淆   非均匀采样  数字图像的灰度直方图  图形表示形式 数组表示形式——下标表示value，下标对应的值表示个数  图像质量：  层次 对比度（最大亮度&#x2F;最小亮度） 影响清晰度因素：亮度、对比度、大小、细微层次  像素">
+<meta property="og:description" content="面向IA-32的模拟器”NEMU”设计">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-09-23T05:55:46.000Z">
-<meta property="article:modified_time" content="2020-09-23T07:06:01.944Z">
+<meta property="article:published_time" content="2020-08-29T00:30:00.000Z">
+<meta property="article:modified_time" content="2020-09-18T01:01:21.574Z">
 <meta property="article:author" content="deusbjx">
-<meta property="article:tag" content="-图像处理">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="NEMU">
+<meta property="article:tag" content="计算机系统与虚拟机">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="fffのblog" type="application/atom+xml">
@@ -172,20 +174,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-图像处理随笔" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-草稿/计算机系统设计" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      图像处理随笔
+      计算机系统设计随笔
     </h1>
   
 
         
-        <a href="/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2020-09-23T05:55:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-23</time>
+        <a href="/%E8%8D%89%E7%A8%BF/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
+  	<time datetime="2020-08-29T00:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-29</time>
 </a>
         
       </header>
@@ -196,37 +198,139 @@
   
   <!-- 目录内容 -->
 
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+    <div id="toc-article" class="toc-article">
+        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91IA-32%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%9DNEMU%E2%80%9D%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">面向IA-32的模拟器”NEMU”设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-1"><span class="toc-number">1.1.</span> <span class="toc-text">2020&#x2F;9&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFNEMU"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.什么是NEMU</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-11"><span class="toc-number">1.2.</span> <span class="toc-text">2020&#x2F;9&#x2F;11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-15"><span class="toc-number">1.3.</span> <span class="toc-text">2020&#x2F;9&#x2F;15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-18"><span class="toc-number">1.4.</span> <span class="toc-text">2020&#x2F;9&#x2F;18</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.4.1.</span> <span class="toc-text">2.实验内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.实验环境和相关工具</span></a></li></ol></li></ol></li></ol>
+         </div>
+   <script type="text/javascript">
+    function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+    function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+   </script>
+      
 <!-- 目录内容结束 -->
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="2020-9-23"><a href="#2020-9-23" class="headerlink" title="2020/9/23"></a>2020/9/23</h3><p>图像处理系统基本组成结构</p>
+        <h2 id="面向IA-32的模拟器”NEMU”设计"><a href="#面向IA-32的模拟器”NEMU”设计" class="headerlink" title="面向IA-32的模拟器”NEMU”设计"></a>面向IA-32的模拟器”NEMU”设计</h2><a id="more"></a>
+<h3 id="2020-9-1"><a href="#2020-9-1" class="headerlink" title="2020/9/1"></a>2020/9/1</h3><h4 id="1-什么是NEMU"><a href="#1-什么是NEMU" class="headerlink" title="1.什么是NEMU"></a>1.什么是NEMU</h4><p>计算机系统栈</p>
+<p><img></p>
+<p> 计网本身为庞大的计算机系统</p>
+<p>NES Emulator(红白机,运行游戏模拟器) &lt;-&gt; NEMU(运行X86系统模拟器)</p>
+<p>理解”程序如何在计算机上运行”的根本途径是实现一个完整的计算机系统</p>
+<p>NEMU任务:</p>
+<p>——功能完备的IA-32全系统模拟器</p>
+<p>——4个连贯实验内容</p>
 <ul>
-<li>图像数字化摄备</li>
-<li>图像处理设备</li>
-<li>图像输出设备</li>
+<li>简易调试器(调试模拟器上程序) &lt;-&gt;gdb(调试NEMU本身) </li>
+<li>指令系统</li>
+<li>存储管理</li>
+<li>中断与I/O</li>
 </ul>
-<p>图像采样：均匀采样与非均匀采样</p>
+<p>开发工具: vim + ctags(wine+source insight) + tmux</p>
+<p>版本控制工具: git</p>
 <ul>
-<li>均匀采样<ul>
-<li>采样间隔小增大数据量</li>
-<li>采样间隔大发生信息混淆</li>
+<li>开发过程的跟踪</li>
+<li>工程版本的控制</li>
 </ul>
-</li>
-<li>非均匀采样</li>
-</ul>
-<p>数字图像的灰度直方图</p>
+<p>NEMU启动和模拟运行环境</p>
+<p>int (<em>handler) (char\</em>):函数指针,传入char*返回int</p>
+<p>i386指令格式:右向左</p>
+<p>r/m -&gt; register/memory /r表示后面跟一个ModR/M字节</p>
+<p>ib,iw,id-&gt;立即数，B0+rb-&gt;判断寄存器(B0对应AX,B1对应BX，B2对应CX)</p>
+<p>C6 /N-&gt;操作码扩展，中间的三位Mod字段，判断操作需要考虑</p>
+<p>指令执行流程:取址-&gt;译码-&gt;执行(三级处理器结构)</p>
+<p>NEMU指令周期——译码ID</p>
+<ol>
+<li>确定是哪一条指令的哪一种形式</li>
+<li>确定操作数</li>
+</ol>
+<p>move_i2r_v:表示move immediate to register，v表示16位或32位，b表示8位(byte)</p>
+<p>move.c，move.h，mov-template.h</p>
+<p>printf设置打印字体颜色</p>
+<p>整数表示实数，此表示方法记为float-&gt;精度和表示范围下降</p>
+<p>float加减法可直接采用整数加减法</p>
+<p>ELF目标文件:可重定位目标文件和可执行目标文件</p>
 <ul>
-<li>图形表示形式</li>
-<li>数组表示形式——下标表示value，下标对应的值表示个数</li>
+<li>节(section)为ELF文件中具有相同特征的最小处理单位</li>
+<li>.text节:代码部分</li>
+<li>.rodata节:只读数据部分，如</li>
+<li>.data节:已初始化的全局变量</li>
+<li>.bss节:未初始化全局变量，不占用磁盘空间</li>
+<li>ELF头:ELF文件结构相关说明信息</li>
+<li>节头表</li>
 </ul>
-<p>图像质量：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">readelf -a add <span class="comment">//查看ELF文件所有信息</span></span><br><span class="line">man <span class="number">5</span> elf</span><br></pre></td></tr></table></figure>
+<p>ELF文件头:7f 45 4c</p>
+<p>ELF符号:全局变量，static，函数</p>
+<h3 id="2020-9-11"><a href="#2020-9-11" class="headerlink" title="2020/9/11"></a>2020/9/11</h3><p>esp:栈指针寄存器 ebp:指向帧底的寄存器</p>
+<p>IA-32中，参数类型是unsigned char，unsigned short，char，short都分配4个字节</p>
+<p>RW可写可读-&gt;数据段 RE可读可执行-&gt;代码段</p>
+<p>扫面头表，找到load(建立页表)</p>
+<p>segment实际使用的内存:[VirtAddr,VirtAddr+Memsiz]</p>
+<p>segment所加载的内存:[VirtAddr,VirtAddr+FileSiz]</p>
+<p>EFLAGS使用位域实现</p>
+<h3 id="2020-9-15"><a href="#2020-9-15" class="headerlink" title="2020/9/15"></a>2020/9/15</h3><p><strong>IA-32(80386)/Linux中的存储管理</strong></p>
 <ul>
-<li>层次</li>
-<li>对比度（最大亮度/最小亮度）</li>
-<li>影响清晰度因素：亮度、对比度、大小、细微层次</li>
+<li>按字节编址(通用计算机)</li>
+<li>保护模式下，IA-32采用段页式虚拟存储管理方式</li>
+<li>存储地址采用逻辑地址(48位)，线性地址(32位)，物理地址(32位)</li>
 </ul>
-<p>像素的连通性——m连通，交集为空</p>
+<p><strong>第一款16位处理器——8086处理器</strong></p>
+<ul>
+<li>16位段处理器(CS,SS,DS,ES等)</li>
+<li>物理方寸地址=(段寄存器&lt;&lt;4)+有效地址，寻址空间变为$2^{20} = 1MB$，此时物理地址为线性地址</li>
+<li>物理地址直接访存</li>
+<li>每次访存与某个段寄存器绑定</li>
+<li>寻址空间有限</li>
+<li>存在安全隐患</li>
+</ul>
+<p>IA-32空间为4GB，仍保留段寄存器——<strong>兼容性&gt;性能</strong></p>
+<p>IA-32工作模式:实模式，保护模式</p>
+<p>段描述符放到主存中，利用指针找到一个描述符</p>
+<p>全局描述符表寄存器(GDTR)</p>
+<p><strong>逻辑地址到线性地址的变换</strong></p>
+<ul>
+<li>CR0的PE位置为1，进入保护模式</li>
+<li>通过段寄存器中段选择符T1位决定在哪个段表查找</li>
+</ul>
+<p>存储保护 地址越界，访问越权</p>
+<p>IA-32环保护机制</p>
+<p><strong>IA-32权限检查</strong></p>
+<ul>
+<li>DPL：位于段描述符中，表示一个段所在特权级别</li>
+<li>RPL：表示请求这所在的特权级别</li>
+<li>CPL：表示当前进程的特权级别，一般与CS寄存器指向的段描述符的DPL字段相同</li>
+</ul>
+<h3 id="2020-9-18"><a href="#2020-9-18" class="headerlink" title="2020/9/18"></a>2020/9/18</h3><p>线性地址到物理地址转换(分页)</p>
+<p><strong>IA-32的控制寄存器</strong></p>
+<ul>
+<li>CR0：控制寄存器</li>
+<li>CR3：存放物理地址，基址寄存器</li>
+</ul>
+<h4 id="2-实验内容"><a href="#2-实验内容" class="headerlink" title="2.实验内容"></a>2.实验内容</h4><p><strong>(1)NEMU调试器</strong></p>
+<p>主要采用si N，w  %eip == xxx，info命令，调试方式还需查看obj/testcase/xxx.txt的反汇编结果</p>
+<p>注意i386手册以及文件中给出的注释</p>
+<p><strong>(2)NEMU指令执行</strong></p>
+<p>重点关注cpu，宏定义函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> make_helper(name) int name(swaddr_t eip)&#123;</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">make_helper(exec)=&gt;</span><br><span class="line"><span class="keyword">int</span> exec(<span class="keyword">swaddr_t</span> eip)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
+<h4 id="3-实验环境和相关工具"><a href="#3-实验环境和相关工具" class="headerlink" title="3.实验环境和相关工具"></a>3.实验环境和相关工具</h4><p>c语言位域结构体，用于实现EFLAGS寄存器，型如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">bit_struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span>  bit1:<span class="number">3</span>;</span><br><span class="line">    <span class="keyword">int</span>  bit2:<span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span>  bit3:<span class="number">7</span>;</span><br><span class="line">&#125;data;</span><br></pre></td></tr></table></figure>
+<p>其中bit_struct表示位域结构体，bit1、bit2、bit3表示对应的位域，data表示位域结构体定义的变量。整个位域结构体占用2个字节，bit1占3位，bit2占5位，bit1和bit2共用一个字节，bit3占7位，独占一个字节。 </p>
 
       
 	  
@@ -279,7 +383,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-图像处理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">NEMU</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">计算机系统与虚拟机</a>
         		</li>
       		
 		</ul>
@@ -335,7 +447,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E9%9A%8F%E7%AC%94/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/%E8%8D%89%E7%A8%BF/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -349,18 +461,18 @@
   
 <nav id="article-nav">
   
-    <a href="/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/git_debug/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Vue学习笔记
+          git commit出现file is empty的bug以及解决办法
         
       </div>
     </a>
   
   
-    <a href="/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">神经网络与深度学习课堂随笔</div>
+    <a href="/%E8%8D%89%E7%A8%BF/mode/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">my_first_blog</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -387,7 +499,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-23"><span class="toc-number">1.</span> <span class="toc-text">2020&#x2F;9&#x2F;23</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91IA-32%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%9DNEMU%E2%80%9D%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">面向IA-32的模拟器”NEMU”设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-1"><span class="toc-number">1.1.</span> <span class="toc-text">2020&#x2F;9&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFNEMU"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.什么是NEMU</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-11"><span class="toc-number">1.2.</span> <span class="toc-text">2020&#x2F;9&#x2F;11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-15"><span class="toc-number">1.3.</span> <span class="toc-text">2020&#x2F;9&#x2F;15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-18"><span class="toc-number">1.4.</span> <span class="toc-text">2020&#x2F;9&#x2F;18</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.4.1.</span> <span class="toc-text">2.实验内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.实验环境和相关工具</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -403,7 +515,7 @@
   
 
   
-  <div id="SOHUCS" sid="图像处理随笔" ></div> 
+  <div id="SOHUCS" sid="草稿/计算机系统设计" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -467,7 +579,7 @@ gitalk.render('gitalk-container')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 deusbjx
+    		&copy; 2021 deusbjx
     	</div>
       	<div class="footer-right">
     

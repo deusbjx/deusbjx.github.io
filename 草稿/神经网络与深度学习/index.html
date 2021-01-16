@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>安全软件工程课堂随笔 | fffのblog</title>
+  <title>神经网络与深度学习课堂随笔 | fffのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安全软件工程的学习笔记">
+  <meta name="description" content="神经网络与深度学习随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安全软件工程课堂随笔">
-<meta property="og:url" content="http://yoursite.com/%E5%AE%89%E5%85%A8%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/index.html">
+<meta property="og:title" content="神经网络与深度学习课堂随笔">
+<meta property="og:url" content="http://yoursite.com/%E8%8D%89%E7%A8%BF/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="fffのblog">
-<meta property="og:description" content="安全软件工程的学习笔记">
+<meta property="og:description" content="神经网络与深度学习随笔">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-09-21T02:28:45.000Z">
-<meta property="article:modified_time" content="2020-09-28T03:10:49.674Z">
+<meta property="article:published_time" content="2020-09-22T05:31:45.000Z">
+<meta property="article:modified_time" content="2020-10-13T07:06:39.669Z">
 <meta property="article:author" content="deusbjx">
-<meta property="article:tag" content="-安全 -软件工程">
+<meta property="article:tag" content="-人工智能">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="fffのblog" type="application/atom+xml">
@@ -172,20 +172,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-安全软件工程课堂随笔" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-草稿/神经网络与深度学习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      安全软件工程课堂随笔
+      神经网络与深度学习课堂随笔
     </h1>
   
 
         
-        <a href="/%E5%AE%89%E5%85%A8%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2020-09-21T02:28:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-21</time>
+        <a href="/%E8%8D%89%E7%A8%BF/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-09-22T05:31:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-22</time>
 </a>
         
       </header>
@@ -200,31 +200,159 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>安全软件工程的学习笔记</strong></p>
+        <p><strong>神经网络与深度学习随笔</strong></p>
 <a id="more"></a>
+<h3 id="2020-9-22"><a href="#2020-9-22" class="headerlink" title="2020/9/22"></a>2020/9/22</h3><p>1.人工智能一个子领域</p>
+<ul>
+<li>神经网络</li>
+<li>深度学习</li>
+</ul>
+<p>2.图灵测试：不接触对方的情况下经理一系列问答，可以认为这个对象是具有智能的</p>
+<p>3.开发人工智能系统</p>
+<ul>
+<li><p>专家知识(人工规则)</p>
+</li>
+<li><p>机器学习(语音识别，图像识别，机器翻译)</p>
+<ul>
+<li><p>规律：决策（预测）函数</p>
+</li>
+<li><p>三要素：模型（线性方法，广义线性方法），学习准则（期望风险），优化（梯度下降）</p>
+</li>
+<li><p>问题：回归，分类，聚类</p>
+</li>
+<li><p>模型：线性回归模型方程：$f(x;w,b) = w^Tx+b$</p>
+</li>
+<li><p>学习准则：损失函数最小化（0-1损失函数，平方损失函数）</p>
+<ul>
+<li>期望风险未知，通过经验风险类似</li>
+<li>经验风险最小化——机器学习问题转化为一个最优化问题</li>
+</ul>
+</li>
+<li><p>优化：梯度下降法——搜索步长$\alpha$也叫做学习率</p>
+</li>
+<li><p>过拟合：经验风险最小化原则容易导致模型在训练集上错误率很低，在未知位置错误率较高——往往是由于训练数据少和噪声等原因造成的</p>
+</li>
+<li><p>设计机器学习模型、学习准则、优化算法来学习特征与输出变量之间的相关性，之后可根据测试数据的特征使用模型来进行预测</p>
+</li>
+<li><p>构建训练数据集，提取特征 $\rightarrow$ 机器学习 $\rightarrow$ 测试阶段</p>
+</li>
+<li><p>特征工程（需要借助人类智能）——数据表示是机器学习的核心问题</p>
+<p>特征提取：去除无谓特征——底层特征，中层特征，高层特征</p>
+</li>
+<li><p>浅层学习——感知器，$y = f(x)$，超过三层后为深度学习($y = f^n(f^{n-1}(…f(x))),n \geqslant 3$时为深度学习)</p>
+</li>
+<li><p>语义鸿沟：人们对文本、图像的理解无法从字符串会图像的底层信息直接获得</p>
+</li>
+<li><p>表示学习：如何自动从数据中学习好的表示——没有明确目标为难点</p>
+</li>
+</ul>
+</li>
+<li><p>人工神经网络——机器学习模型</p>
+<ul>
+<li><p>由大量的神经元以及之间的有向连接构成，考虑三方面</p>
+<ul>
+<li><p>神经元激活规则——输入到输出的映射关系，一般为非线性函数</p>
+</li>
+<li><p>网络拓扑结构——不同神经元之间连接关系</p>
+<p>前馈网络（最经典）</p>
+<p>记忆网络（与前一次迭代结果有相关性）——语音识别</p>
+<p>图网络（更自由）</p>
+</li>
+<li><p>学习算法——通过训练数据学习神经网络的参数</p>
+</li>
+</ul>
+</li>
+<li><p>输入层 $\rightarrow$ 隐藏层 $\rightarrow$ 输出层</p>
+</li>
+<li><p>重点理解基础模型的原理与设计思想</p>
+</li>
+</ul>
+</li>
+<li><p>常用深度学习框架：pytorch和tenserflow</p>
+</li>
+</ul>
+<h3 id="2020-9-24"><a href="#2020-9-24" class="headerlink" title="2020/9/24"></a>2020/9/24</h3><p>感知机——模拟神经元</p>
+<ul>
+<li>$f(x) = sign(w^Tx+b)$，符号函数</li>
+<li>线性分类模型</li>
+</ul>
+<h3 id="2020-9-29"><a href="#2020-9-29" class="headerlink" title="2020/9/29"></a>2020/9/29</h3><p>激活函数-Sigmoid型：</p>
+<ul>
+<li>Logistic函数</li>
+<li><p>Tahn函数</p>
+</li>
+<li><p>非线性且连续可导</p>
+</li>
+<li><p><strong>收敛较慢</strong></p>
+</li>
+</ul>
+<p>激活函数-ReLU型</p>
+<p>前馈神经网络优势：</p>
+<ul>
+<li><p>解决亦或问题</p>
+</li>
+<li><p>解决其他非线性问题</p>
+</li>
+<li>通用近似定理</li>
+</ul>
+<p>反向传播算法</p>
+<h3 id="2020-10-13"><a href="#2020-10-13" class="headerlink" title="2020/10/13"></a>2020/10/13</h3><p>小尺寸滤波器效果更好</p>
+<p>更多的滤波器(增加网络宽度)与深度可取得更好结果</p>
+<p>更大的全连接无法取得更好结果</p>
+<p>VGG-VD</p>
+<ul>
+<li>LRN不重要</li>
+<li>初始化方式很重要——浅层网络初始化，均匀分布初始化</li>
+<li><strong>训练更深的卷积神经网络依旧很难</strong></li>
+</ul>
+<p>ResNets</p>
+<ul>
+<li>残差链接：$y = F(x) \rightarrow y = F(x)+x$恢复梯度</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{align*}
+&x \rightarrow F(x) \rightarrow y \rightarrow ···\rightarrow l\\
+&\frac{\partial L}{\partial y} \\
 
-<h3 id="2020-9-21"><a href="#2020-9-21" class="headerlink" title="2020/9/21"></a>2020/9/21</h3><p>1.基本概念——<strong>安全问题频繁、普遍且严重</strong></p>
-<p>2.什么是安全</p>
+\end{align*}</script><p>​       显著平滑优化地带，$l$表示损失函数</p>
+<p>DenseNet</p>
 <ul>
-<li>安全性——<strong>原则</strong></li>
-<li>安全产品——<strong>完整性和可用性</strong></li>
-<li>安全漏洞——<strong>篡改权限，控制操作</strong></li>
+<li><p>残差链接</p>
+<p>$x_i = H_i(x_{i-1}+x_{i-1})$</p>
+</li>
+<li><p>稠密链接</p>
+</li>
+<li><p>堆叠多个Dense模块，每块内使用Dense连接</p>
+</li>
 </ul>
-<h3 id="2020-9-23"><a href="#2020-9-23" class="headerlink" title="2020/9/23"></a>2020/9/23</h3><p>1.维护阶段</p>
+<p>SE-Net</p>
+<p>深层卷积神经网络难点：</p>
 <ul>
-<li>准备评估漏洞报告</li>
-<li>对漏洞进行事后分析，并在必要时采取行动（防御）</li>
-<li>为响应一个单独错误而发出更新</li>
-<li>更新代码扫描工具</li>
+<li><p>过拟合</p>
+</li>
+<li><p>难收敛</p>
+</li>
+<li><p>计算代价很大</p>
+<p>$\Rightarrow$ 优化角度：</p>
+</li>
+<li><p>非凸优化问题</p>
+</li>
+<li><p>结构差异大</p>
+</li>
 </ul>
-<p>2.安全需求</p>
-<h3 id="2020-9-28"><a href="#2020-9-28" class="headerlink" title="2020/9/28"></a>2020/9/28</h3><p>典型获取安全需求方法：</p>
+<p>训练次数固定，逐层归一化</p>
+<p>小批量随机梯度下降(Mini-Batch SGD)：</p>
 <ul>
-<li>基于滥用用例的方法</li>
-<li>基于重用的方法</li>
-<li>基于扩展UML的方法</li>
-<li>使用为中心的方法(user)</li>
-<li>基于CLASP的方法0</li>
+<li>加权平均更新</li>
+<li>学习率——大震荡快，小收敛不稳定</li>
+</ul>
+<p>改进的SGD：</p>
+<ul>
+<li>批量越大，方差越小——使用较大学习率</li>
+<li>Adam——动态学习率与动量更新策略结合</li>
+<li>学习率调整（动态衰减(梯度下降，线性下降)，周期性调整，热启动）</li>
+<li>自适应学习率：Adagrad——梯度越小，学习率越大</li>
+<li>动量法——做平均</li>
 </ul>
 
       
@@ -278,7 +406,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-安全 -软件工程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-人工智能</a>
         		</li>
       		
 		</ul>
@@ -334,7 +462,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/%E5%AE%89%E5%85%A8%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/%E8%8D%89%E7%A8%BF/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -348,18 +476,18 @@
   
 <nav id="article-nav">
   
-    <a href="/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/%E8%8D%89%E7%A8%BF/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E9%9A%8F%E7%AC%94/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          数据仓库与数据挖掘课堂随笔
+          图像处理随笔
         
       </div>
     </a>
   
   
-    <a href="/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">软件工程课堂随笔</div>
+    <a href="/%E8%8D%89%E7%A8%BF/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据仓库与数据挖掘课堂随笔</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -386,7 +514,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-21"><span class="toc-number">1.</span> <span class="toc-text">2020&#x2F;9&#x2F;21</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-23"><span class="toc-number">2.</span> <span class="toc-text">2020&#x2F;9&#x2F;23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-28"><span class="toc-number">3.</span> <span class="toc-text">2020&#x2F;9&#x2F;28</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-22"><span class="toc-number">1.</span> <span class="toc-text">2020&#x2F;9&#x2F;22</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-24"><span class="toc-number">2.</span> <span class="toc-text">2020&#x2F;9&#x2F;24</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-29"><span class="toc-number">3.</span> <span class="toc-text">2020&#x2F;9&#x2F;29</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-10-13"><span class="toc-number">4.</span> <span class="toc-text">2020&#x2F;10&#x2F;13</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -402,7 +530,7 @@
   
 
   
-  <div id="SOHUCS" sid="安全软件工程课堂随笔" ></div> 
+  <div id="SOHUCS" sid="草稿/神经网络与深度学习" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -466,7 +594,7 @@ gitalk.render('gitalk-container')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 deusbjx
+    		&copy; 2021 deusbjx
     	</div>
       	<div class="footer-right">
     

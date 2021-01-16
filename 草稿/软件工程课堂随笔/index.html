@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>计算机系统设计随笔 | fffのblog</title>
+  <title>软件工程课堂随笔 | fffのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面向IA-32的模拟器”NEMU”设计">
+  <meta name="description" content="软件工程课堂随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机系统设计随笔">
-<meta property="og:url" content="http://yoursite.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:title" content="软件工程课堂随笔">
+<meta property="og:url" content="http://yoursite.com/%E8%8D%89%E7%A8%BF/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/index.html">
 <meta property="og:site_name" content="fffのblog">
-<meta property="og:description" content="面向IA-32的模拟器”NEMU”设计">
+<meta property="og:description" content="软件工程课堂随笔">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-08-29T00:30:00.000Z">
-<meta property="article:modified_time" content="2020-09-18T01:01:21.574Z">
+<meta property="article:published_time" content="2020-09-21T00:34:18.000Z">
+<meta property="article:modified_time" content="2020-09-30T03:58:43.859Z">
 <meta property="article:author" content="deusbjx">
-<meta property="article:tag" content="note">
-<meta property="article:tag" content="NEMU">
-<meta property="article:tag" content="计算机系统与虚拟机">
+<meta property="article:tag" content="-课堂笔记 -软件工程">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="fffのblog" type="application/atom+xml">
@@ -174,20 +172,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机系统设计" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-草稿/软件工程课堂随笔" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      计算机系统设计随笔
+      软件工程课堂随笔
     </h1>
   
 
         
-        <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
-  	<time datetime="2020-08-29T00:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-29</time>
+        <a href="/%E8%8D%89%E7%A8%BF/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" class="archive-article-date">
+  	<time datetime="2020-09-21T00:34:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-21</time>
 </a>
         
       </header>
@@ -198,144 +196,181 @@
   
   <!-- 目录内容 -->
 
-    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-          <span class="btn-bg"></span>
-          <span class="btn-text">文章导航</span>
-          </p>
-    <div id="toc-article" class="toc-article">
-        <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-        <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91IA-32%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%9DNEMU%E2%80%9D%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">面向IA-32的模拟器”NEMU”设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-1"><span class="toc-number">1.1.</span> <span class="toc-text">2020&#x2F;9&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFNEMU"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.什么是NEMU</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-11"><span class="toc-number">1.2.</span> <span class="toc-text">2020&#x2F;9&#x2F;11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-15"><span class="toc-number">1.3.</span> <span class="toc-text">2020&#x2F;9&#x2F;15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-18"><span class="toc-number">1.4.</span> <span class="toc-text">2020&#x2F;9&#x2F;18</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.4.1.</span> <span class="toc-text">2.实验内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.实验环境和相关工具</span></a></li></ol></li></ol></li></ol>
-         </div>
-   <script type="text/javascript">
-    function showToc(){
-        var toc_article = document.getElementById("toc-article");
-        var show_toc_btn = document.getElementById("show-toc-btn");
-        toc_article.setAttribute("style","display:block");
-        show_toc_btn.setAttribute("style","display:none");
-        };
-    function showBtn(){
-        var toc_article = document.getElementById("toc-article");
-        var show_toc_btn = document.getElementById("show-toc-btn");
-        toc_article.setAttribute("style","display:none");
-        show_toc_btn.setAttribute("style","display:block");
-        };
-   </script>
-      
 <!-- 目录内容结束 -->
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="面向IA-32的模拟器”NEMU”设计"><a href="#面向IA-32的模拟器”NEMU”设计" class="headerlink" title="面向IA-32的模拟器”NEMU”设计"></a>面向IA-32的模拟器”NEMU”设计</h2><a id="more"></a>
-
-<h3 id="2020-9-1"><a href="#2020-9-1" class="headerlink" title="2020/9/1"></a>2020/9/1</h3><h4 id="1-什么是NEMU"><a href="#1-什么是NEMU" class="headerlink" title="1.什么是NEMU"></a>1.什么是NEMU</h4><p>计算机系统栈</p>
-<img>
-
-<p> 计网本身为庞大的计算机系统</p>
-<p>NES Emulator(红白机,运行游戏模拟器) &lt;-&gt; NEMU(运行X86系统模拟器)</p>
-<p>理解”程序如何在计算机上运行”的根本途径是实现一个完整的计算机系统</p>
-<p>NEMU任务:</p>
-<p>——功能完备的IA-32全系统模拟器</p>
-<p>——4个连贯实验内容</p>
+        <p><strong>软件工程课堂随笔</strong></p>
+<a id="more"></a>
+<h3 id="2020-9-21"><a href="#2020-9-21" class="headerlink" title="2020/9/21"></a>2020/9/21</h3><p>软件工程目的和意义：运营——开发——研究</p>
+<p>1.当前软件产业的趋势——<strong>软件定义一切</strong>:</p>
 <ul>
-<li>简易调试器(调试模拟器上程序) &lt;-&gt;gdb(调试NEMU本身) </li>
-<li>指令系统</li>
-<li>存储管理</li>
-<li>中断与I/O</li>
-</ul>
-<p>开发工具: vim + ctags(wine+source insight) + tmux</p>
-<p>版本控制工具: git</p>
+<li><p>网络化趋势</p>
+<p>智能网络：</p>
 <ul>
-<li>开发过程的跟踪</li>
-<li>工程版本的控制</li>
+<li>单机开发到云边端</li>
+<li>互联网到移动互联网，车联网，万物互联</li>
+<li>被动点击到主动推送</li>
+<li>固定信息到智能生成</li>
 </ul>
-<p>NEMU启动和模拟运行环境</p>
-<p>int (<em>handler) (char\</em>):函数指针,传入char*返回int</p>
-<p>i386指令格式:右向左</p>
-<p>r/m -&gt; register/memory /r表示后面跟一个ModR/M字节</p>
-<p>ib,iw,id-&gt;立即数，B0+rb-&gt;判断寄存器(B0对应AX,B1对应BX，B2对应CX)</p>
-<p>C6 /N-&gt;操作码扩展，中间的三位Mod字段，判断操作需要考虑</p>
-<p>指令执行流程:取址-&gt;译码-&gt;执行(三级处理器结构)</p>
-<p>NEMU指令周期——译码ID</p>
+</li>
+<li><p>服务化趋势</p>
+<p>打包式软件，智能化的服务式软件(Iaas,Paas,Saas)</p>
+</li>
+<li><p>全球化趋势</p>
+<p>开源，生态，协作</p>
+</li>
+</ul>
+<p>2.软件开发的错误观点</p>
+<ul>
+<li>掌握程序语言开发就没有问题</li>
+<li>软件需求分析困难，不管三七二十一先把软件做了</li>
+<li><p>有最好的开发工具，最好的计算机，一定能做出优秀的软件</p>
+<p> <strong>错误认为：软件就是程序，开发软件就是编写程序</strong></p>
+</li>
+</ul>
+<p>3.软件开发需要算法——<strong>可解释性</strong></p>
+<p>4.现代软件开发对人才要求——<strong>创新能力，开发能力，团队精神</strong></p>
+<p>5.软件概念:计算机系统，逻辑产品，系统指挥中枢，信息转换器，工具</p>
+<p>6.软件特点：</p>
+<ul>
+<li><strong>软件=程序+数据+文档</strong>，<strong>程序=算法+数据结构</strong></li>
+<li>软件为开发出来的，非传统制造</li>
+<li>软件不会磨损</li>
+<li>软件产业逐步走向基于构件的组装，但仍为定制  </li>
+</ul>
+<h3 id="2020-9-23"><a href="#2020-9-23" class="headerlink" title="2020/9/23"></a>2020/9/23</h3><p>推荐书目：走出软件作坊</p>
+<p>1.软件工程是在克服软件危机的过程中逐渐形成与发展的——<strong>AI for SE，SE for AI</strong></p>
+<p>2.软工发展阶段</p>
+<ul>
+<li>第一代：传统软件工程（出现名词，概念，方法）</li>
+<li>第二代：对象工程（重点转移到面向对象的分析与设计）</li>
+<li>第三代：过程工程（精益生产，零库存）</li>
+<li>第四代：构件工程</li>
+</ul>
+<p>面向过程 $\rightarrow$ 面向对象 $\rightarrow$ 面向构件 $\rightarrow$ 面向服务——软件的重用粒度与复用程度越来越大</p>
+<p>3.软件工程三要素：方法，工具，过程</p>
+<p>4.软件生命周期（SDLC）——瀑布模型</p>
+<ul>
+<li>计划时期——问题定义，可行性研究</li>
+<li>开发时期——需求分析，软件设计，编码，测试</li>
+<li>运行时期——运行与维护</li>
+</ul>
+<p>5.典型软件开发模型：</p>
+<p>6.软件过程模型（agile programming）：</p>
+<ul>
+<li>瀑布模型——软件需求完全确定为前提<ul>
+<li>软件开发过程与软件生命周期一致</li>
+<li>相邻二阶段之间存在因果关系</li>
+<li>阶段性产品评审</li>
+</ul>
+</li>
+<li><p>螺旋模型——集大成</p>
+<ul>
+<li>原型模型——横向模型</li>
+<li>变换模型</li>
+<li>增量模型——非整体开发模型，<strong>迭代思路</strong>，增量开发可用瀑布或快速原型模型</li>
+<li>螺旋模型引入了风险分析，共四个工作步骤<ul>
+<li>确定目标</li>
+<li>评估方案</li>
+<li>开发确认产品</li>
+<li>计划下一周期工作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>其他经典模型：V模型（测试贯穿始终），喷泉模型（迭代，无间隙），构件组装模型</p>
+</li>
+<li>敏捷开发过程与RUP：适用于小型项目，XP编程（仅适用小项目），功能简单</li>
+</ul>
+<h3 id="2020-9-28"><a href="#2020-9-28" class="headerlink" title="2020/9/28"></a>2020/9/28</h3><p>1.结构化开发方法——SP,SA,SD</p>
+<p>2.面向对象方法——四个要点：对象；类；父类(基类)和子类(派生类)；消息</p>
+<p>3.面向对象开发方法的组成——数字孪生：</p>
+<ul>
+<li>面向对象分析方法 OOA法</li>
+<li>面向对象设计方法 OOD法</li>
+<li>面向对象程序设计方法 OOP法</li>
+</ul>
+<p>4.智慧城市——CPS,CPSS</p>
+<p>5.信息系统开发方法：</p>
+<ul>
+<li>结构化法</li>
+<li>原型法</li>
+<li>面向对象方法</li>
+<li>面向服务方法</li>
+</ul>
+<p>6.软件生命周期(SDLC)</p>
+<ul>
+<li>计划时期<ul>
+<li>问题定义</li>
+<li>可行性研究</li>
+</ul>
+</li>
+<li>开发时期<ul>
+<li><strong>需求分析</strong></li>
+<li>软件设计</li>
+<li>编码</li>
+<li>测试</li>
+<li>运行与维护</li>
+</ul>
+</li>
+</ul>
+<p>7.软件需求重要性——没有需求就没有软件</p>
+<p>8.产品管理系统ERP</p>
+<p>   业务需求调整：客户关系管理CRM——信息孤岛</p>
+<p>   <strong>需求变更永无止境</strong> </p>
+<p>9.软件需求内容：功能需求，领域需求</p>
+<h3 id="2020-9-30"><a href="#2020-9-30" class="headerlink" title="2020/9/30"></a>2020/9/30</h3><p>1.注意力经济</p>
+<p>2.系统功能：</p>
+<ul>
+<li>基本数据维护功能</li>
+<li>基本业务功能</li>
+<li>数据库管理功能</li>
+<li>信息查询功能</li>
+</ul>
+<p>3.非功能需求</p>
+<ul>
+<li>系统安全性需求</li>
+<li>对系统可用性需求</li>
+<li>查询速度需求</li>
+<li><p>可靠性需求</p>
+</li>
+<li><p>领域需求</p>
+</li>
+</ul>
+<p>4.需求分析常用技术</p>
+<ul>
+<li>分解——大化小</li>
+<li>抽象——抓本质</li>
+<li>多视点——不同角度思考</li>
+</ul>
+<p>5.需求验证内容</p>
+<ul>
+<li>有效性</li>
+<li>一致性</li>
+<li>完备性</li>
+<li>可检验性</li>
+</ul>
+<p>6.结构化分析方法</p>
 <ol>
-<li>确定是哪一条指令的哪一种形式</li>
-<li>确定操作数</li>
+<li>建立——系统具体模型</li>
+<li>抽象——DFD图分析用户需求</li>
+<li>建立——DFD图分析系统需求</li>
+<li>改进</li>
 </ol>
-<p>move_i2r_v:表示move immediate to register，v表示16位或32位，b表示8位(byte)</p>
-<p>move.c，move.h，mov-template.h</p>
-<p>printf设置打印字体颜色</p>
-<p>整数表示实数，此表示方法记为float-&gt;精度和表示范围下降</p>
-<p>float加减法可直接采用整数加减法</p>
-<p>ELF目标文件:可重定位目标文件和可执行目标文件</p>
+<p>7.软件设计的目标：构造一个高内聚低耦合的软件模型</p>
 <ul>
-<li>节(section)为ELF文件中具有相同特征的最小处理单位</li>
-<li>.text节:代码部分</li>
-<li>.rodata节:只读数据部分，如</li>
-<li>.data节:已初始化的全局变量</li>
-<li>.bss节:未初始化全局变量，不占用磁盘空间</li>
-<li>ELF头:ELF文件结构相关说明信息</li>
-<li>节头表</li>
+<li>高可靠性</li>
+<li>高可维护性</li>
+<li>高效率</li>
+<li>高可理解性</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">readelf -a add <span class="comment">//查看ELF文件所有信息</span></span><br><span class="line">man <span class="number">5</span> elf</span><br></pre></td></tr></table></figure>
-
-<p>ELF文件头:7f 45 4c</p>
-<p>ELF符号:全局变量，static，函数</p>
-<h3 id="2020-9-11"><a href="#2020-9-11" class="headerlink" title="2020/9/11"></a>2020/9/11</h3><p>esp:栈指针寄存器 ebp:指向帧底的寄存器</p>
-<p>IA-32中，参数类型是unsigned char，unsigned short，char，short都分配4个字节</p>
-<p>RW可写可读-&gt;数据段 RE可读可执行-&gt;代码段</p>
-<p>扫面头表，找到load(建立页表)</p>
-<p>segment实际使用的内存:[VirtAddr,VirtAddr+Memsiz]</p>
-<p>segment所加载的内存:[VirtAddr,VirtAddr+FileSiz]</p>
-<p>EFLAGS使用位域实现</p>
-<h3 id="2020-9-15"><a href="#2020-9-15" class="headerlink" title="2020/9/15"></a>2020/9/15</h3><p><strong>IA-32(80386)/Linux中的存储管理</strong></p>
+<p>8.软件设计准则</p>
 <ul>
-<li>按字节编址(通用计算机)</li>
-<li>保护模式下，IA-32采用段页式虚拟存储管理方式</li>
-<li>存储地址采用逻辑地址(48位)，线性地址(32位)，物理地址(32位)</li>
+<li>软件结构准则——单输入单输出</li>
+<li>模块化准则</li>
+<li>软件独立性准则</li>
 </ul>
-<p><strong>第一款16位处理器——8086处理器</strong></p>
-<ul>
-<li>16位段处理器(CS,SS,DS,ES等)</li>
-<li>物理方寸地址=(段寄存器&lt;&lt;4)+有效地址，寻址空间变为$2^{20} = 1MB$，此时物理地址为线性地址</li>
-<li>物理地址直接访存</li>
-<li>每次访存与某个段寄存器绑定</li>
-<li>寻址空间有限</li>
-<li>存在安全隐患</li>
-</ul>
-<p>IA-32空间为4GB，仍保留段寄存器——<strong>兼容性&gt;性能</strong></p>
-<p>IA-32工作模式:实模式，保护模式</p>
-<p>段描述符放到主存中，利用指针找到一个描述符</p>
-<p>全局描述符表寄存器(GDTR)</p>
-<p><strong>逻辑地址到线性地址的变换</strong></p>
-<ul>
-<li>CR0的PE位置为1，进入保护模式</li>
-<li>通过段寄存器中段选择符T1位决定在哪个段表查找</li>
-</ul>
-<p>存储保护 地址越界，访问越权</p>
-<p>IA-32环保护机制</p>
-<p><strong>IA-32权限检查</strong></p>
-<ul>
-<li>DPL：位于段描述符中，表示一个段所在特权级别</li>
-<li>RPL：表示请求这所在的特权级别</li>
-<li>CPL：表示当前进程的特权级别，一般与CS寄存器指向的段描述符的DPL字段相同</li>
-</ul>
-<h3 id="2020-9-18"><a href="#2020-9-18" class="headerlink" title="2020/9/18"></a>2020/9/18</h3><p>线性地址到物理地址转换(分页)</p>
-<p><strong>IA-32的控制寄存器</strong></p>
-<ul>
-<li>CR0：控制寄存器</li>
-<li>CR3：存放物理地址，基址寄存器</li>
-</ul>
-<h4 id="2-实验内容"><a href="#2-实验内容" class="headerlink" title="2.实验内容"></a>2.实验内容</h4><p><strong>(1)NEMU调试器</strong></p>
-<p>主要采用si N，w  %eip == xxx，info命令，调试方式还需查看obj/testcase/xxx.txt的反汇编结果</p>
-<p>注意i386手册以及文件中给出的注释</p>
-<p><strong>(2)NEMU指令执行</strong></p>
-<p>重点关注cpu，宏定义函数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> make_helper(name) int name(swaddr_t eip)&#123;</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">make_helper(exec)=&gt;</span><br><span class="line"><span class="keyword">int</span> exec(<span class="keyword">swaddr_t</span> eip)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
-
-<h4 id="3-实验环境和相关工具"><a href="#3-实验环境和相关工具" class="headerlink" title="3.实验环境和相关工具"></a>3.实验环境和相关工具</h4><p>c语言位域结构体，用于实现EFLAGS寄存器，型如下</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">bit_struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span>  bit1:<span class="number">3</span>;</span><br><span class="line">    <span class="keyword">int</span>  bit2:<span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span>  bit3:<span class="number">7</span>;</span><br><span class="line">&#125;data;</span><br></pre></td></tr></table></figure>
-
-<p>其中bit_struct表示位域结构体，bit1、bit2、bit3表示对应的位域，data表示位域结构体定义的变量。整个位域结构体占用2个字节，bit1占3位，bit2占5位，bit1和bit2共用一个字节，bit3占7位，独占一个字节。 </p>
 
       
 	  
@@ -388,15 +423,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">NEMU</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">计算机系统与虚拟机</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-课堂笔记 -软件工程</a>
         		</li>
       		
 		</ul>
@@ -452,7 +479,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/%E8%8D%89%E7%A8%BF/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -466,18 +493,18 @@
   
 <nav id="article-nav">
   
-    <a href="/git_debug/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/%E8%8D%89%E7%A8%BF/%E5%AE%89%E5%85%A8%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%AF%BE%E5%A0%82%E9%9A%8F%E7%AC%94/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          git commit出现file is empty的bug以及解决办法
+          安全软件工程课堂随笔
         
       </div>
     </a>
   
   
-    <a href="/mode/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">my_first_blog</div>
+    <a href="/%E8%8D%89%E7%A8%BF/himqtt%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">himqtt阅读笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -504,7 +531,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91IA-32%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%99%A8%E2%80%9DNEMU%E2%80%9D%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">面向IA-32的模拟器”NEMU”设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-1"><span class="toc-number">1.1.</span> <span class="toc-text">2020&#x2F;9&#x2F;1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFNEMU"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.什么是NEMU</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-11"><span class="toc-number">1.2.</span> <span class="toc-text">2020&#x2F;9&#x2F;11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-15"><span class="toc-number">1.3.</span> <span class="toc-text">2020&#x2F;9&#x2F;15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-18"><span class="toc-number">1.4.</span> <span class="toc-text">2020&#x2F;9&#x2F;18</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.4.1.</span> <span class="toc-text">2.实验内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.实验环境和相关工具</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-21"><span class="toc-number">1.</span> <span class="toc-text">2020&#x2F;9&#x2F;21</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-23"><span class="toc-number">2.</span> <span class="toc-text">2020&#x2F;9&#x2F;23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-28"><span class="toc-number">3.</span> <span class="toc-text">2020&#x2F;9&#x2F;28</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-9-30"><span class="toc-number">4.</span> <span class="toc-text">2020&#x2F;9&#x2F;30</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -520,7 +547,7 @@
   
 
   
-  <div id="SOHUCS" sid="计算机系统设计" ></div> 
+  <div id="SOHUCS" sid="草稿/软件工程课堂随笔" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -584,7 +611,7 @@ gitalk.render('gitalk-container')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 deusbjx
+    		&copy; 2021 deusbjx
     	</div>
       	<div class="footer-right">
     
