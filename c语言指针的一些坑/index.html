@@ -202,10 +202,8 @@
       
         <p><strong>练习c语言时出现的一些问题(百度上容易找不到)</strong></p>
 <a id="more"></a>
-
-<h3 id="一、返回字符串函数问题"><a href="#一、返回字符串函数问题" class="headerlink" title="一、返回字符串函数问题"></a>一、返回字符串函数问题</h3><p>c语言的字符串表示方式均为<strong>char*<strong>，即字符指针。c语言中返回字符串的函数也使用</strong>char*<em>\</em>形式。在函数中自己定义的数组无法作为返回值，因为在函数内部定义的所有变量均为局部变量，而局部变量的生存期仅在块内部，而在实际的</strong>main**函数中，其内存空间已经被回收</p>
+<h3 id="一、返回字符串函数问题"><a href="#一、返回字符串函数问题" class="headerlink" title="一、返回字符串函数问题"></a>一、返回字符串函数问题</h3><p>c语言的字符串表示方式均为<strong>char*</strong>，即字符指针。c语言中返回字符串的函数也使用<strong>char</strong>*形式。在函数中自己定义的数组无法作为返回值，因为在函数内部定义的所有变量均为局部变量，而局部变量的生存期仅在块内部，而在实际的<strong>main</strong>函数中，其内存空间已经被回收</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> * <span class="title">convert</span><span class="params">(<span class="keyword">char</span> * s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> ans[<span class="number">10000</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">strcpy</span>(ans,s);</span><br><span class="line">    <span class="comment">//return ans; 错误，内部定义的无法作为其返回值</span></span><br><span class="line">    <span class="keyword">return</span> s; <span class="comment">//正确</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>返回字符串有如下四种方法:</p>
 <ol>
 <li>将字符串指针作为函数参数传入，并返回该指针。</li>
@@ -216,7 +214,6 @@
 <p>详细解释可参考博客<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lifan3a/articles/10942241.html">https://www.cnblogs.com/lifan3a/articles/10942241.html</a></p>
 <p>此外，c语言字符数组(字符串)赋值时可以采用如下写法进行变量传递</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> * <span class="title">convert</span><span class="params">(<span class="keyword">char</span> * s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> ans[<span class="number">10000</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    ans[i] = s[j]; <span class="comment">//i与j均为非负整数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>对于整个字符串的数据传递则使用<strong>strcpy</strong>与<strong>strncpy</strong>函数，具体用法可查阅百度</p>
 <h3 id="二、关于switch的问题"><a href="#二、关于switch的问题" class="headerlink" title="二、关于switch的问题"></a>二、关于switch的问题</h3><p>c语言的switch语句在使用时不允许定义新的变量</p>
 
@@ -578,7 +575,51 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-前端 -学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-c语言 -指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">debug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-防火墙 -物联网 -c语言框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2"><test></a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-安全 -软件工程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-数据挖掘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-编译原理 -课堂随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-人工智能</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,51 +635,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">debug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-c语言 -指针</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-防火墙 -物联网 -c语言框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-安全 -软件工程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-数据挖掘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-课堂笔记 -软件工程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-图像处理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-人工智能</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-前端 -学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-编译原理 -课堂随笔</a>
               </li>
             
             <div class="clearfix"></div>
