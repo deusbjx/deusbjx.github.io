@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>网页脚本编写心得 | fffのblog</title>
+  <title>算法学习笔记 | fffのblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习编写及使用网页JS脚本时的一些经验，主要针对一些自己遇到而百度上没有明确说明的">
+  <meta name="description" content="寒假学(e)习(bu)算法的一些笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网页脚本编写心得">
-<meta property="og:url" content="http://yoursite.com/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/index.html">
+<meta property="og:title" content="算法学习笔记">
+<meta property="og:url" content="http://yoursite.com/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="fffのblog">
-<meta property="og:description" content="学习编写及使用网页JS脚本时的一些经验，主要针对一些自己遇到而百度上没有明确说明的">
+<meta property="og:description" content="寒假学(e)习(bu)算法的一些笔记">
 <meta property="og:locale">
-<meta property="og:image" content="http://yoursite.com/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/myblog/source/_posts/网页脚本编写心得/1.png">
-<meta property="og:image" content="http://yoursite.com/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/myblog/source/_posts/网页脚本编写心得/2.png">
-<meta property="article:published_time" content="2021-01-16T11:50:01.000Z">
-<meta property="article:modified_time" content="2021-01-16T12:30:14.363Z">
+<meta property="article:published_time" content="2021-01-19T03:42:24.000Z">
+<meta property="article:modified_time" content="2021-01-19T08:41:43.235Z">
 <meta property="article:author" content="deusbjx">
-<meta property="article:tag" content="-脚本工具">
+<meta property="article:tag" content="-算法 -数据结构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/myblog/source/_posts/网页脚本编写心得/1.png">
   
     <link rel="alternative" href="/atom.xml" title="fffのblog" type="application/atom+xml">
   
@@ -175,20 +172,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="title-网页脚本编写心得" class="article article-type-title " itemscope itemprop="blogPost">
+            <article id="post-算法学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      网页脚本编写心得
+      算法学习笔记
     </h1>
   
 
         
-        <a href="/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/" class="archive-article-date">
-  	<time datetime="2021-01-16T11:50:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-16</time>
+        <a href="/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-01-19T03:42:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-19</time>
 </a>
         
       </header>
@@ -203,19 +200,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>学习编写及使用网页JS脚本时的一些经验，主要针对一些自己遇到而百度上没有明确说明的</strong></p>
+        <p><strong>寒假学(e)习(bu)算法的一些笔记</strong></p>
 <a id="more"></a>
-<h4 id="1-插件工具选择"><a href="#1-插件工具选择" class="headerlink" title="1.插件工具选择"></a>1.插件工具选择</h4><p> 本文使用的网页脚本工具为油猴插件，详细的配置过程可以参考百度教程，此处不做过多叙述</p>
-<p>编写脚本的工具</p>
-<h4 id="2-脚本使用"><a href="#2-脚本使用" class="headerlink" title="2.脚本使用"></a>2.脚本使用</h4><p>以谷歌浏览器为例，点击右上角的扩展程序按钮，在其中点击配置好的插件，即可运行脚本。</p>
-<h4 id="3-脚本编写"><a href="#3-脚本编写" class="headerlink" title="3.脚本编写"></a>3.脚本编写</h4><p>脚本编写主要使用的语言为Javascript，其中也包含jQuery，HTML，CSS等语言，主体仍基于JS。</p>
-<p>在进行脚本编辑时，我们使用油猴插件进行脚本的加载与创建。在这里主要进行脚本编写方面的说明。</p>
-<p>油猴插件最初会给出一个总运行脚本function，其中涵盖着’use strict’一句。其后我们可以进行在外面编写其他的函数并在此处调用而实现脚本加载。</p>
-<p>这里有一个问题(原理不知道为啥，但一定得这么调)，此处需要使用setTimeout函数来调用已写的JS函数，并为其设置相应的开始时长，时长的格式为nEm，即$n✖10^m$毫秒，如下图所示：</p>
-<p><img src="/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/myblog\source\_posts\网页脚本编写心得\1.png" alt="1610799574569"></p>
-<p>在调用的函数内部，我们如需调用其他的JS函数，以button为例，需采取的形式如下：</p>
-<p><img src="/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/myblog\source\_posts\网页脚本编写心得\2.png" alt="1610799894316"></p>
-<p>其中pj可以为我们任意编写好的函数。</p>
+<h4 id="2021-1-19——最小生成树"><a href="#2021-1-19——最小生成树" class="headerlink" title="2021/1/19——最小生成树"></a>2021/1/19——最小生成树</h4><p>最小生成树用于解决连接所有点最小费用的问题。能够满足任意两点之间有且仅有一条简单路径的结构只有树，且这棵树包含 n 个节点。我们称这棵树为给定的图的生成树，其中总权值最小的生成树，我们称其为最小生成树。 </p>
+<p>最小生成树问题有两种主要解决算法：Prim和Kruskal</p>
+<ul>
+<li><p><strong>Prim</strong>算法</p>
+<p>Prim算法的结构元素如下：</p>
+<ul>
+<li>假定存在两个集合，$V$与$V_{new}$</li>
+<li>最开始，所有的图节点集合均在$V$中</li>
+<li>如果一个节点加入了最小生成树中，则将此节点放入$V_{new}$，最终的$V_{new}$即为求得的最小生成树</li>
+<li>Prim算法主要维护两个数组：$lowcost$数组与$V$数组。$lowcost$数组用于保存$V$中的每个结点距$V_{new}$中所有节点距离的最小值，如果节点已经加入了$V_{new}$，则将$lowcost$值置为-1；$V$数组用于保存节点的访问情况，初值为0，如若节点加入了$V_{new}$中，则置为-1</li>
+</ul>
+<p>Prim算法的步骤为：</p>
+<ul>
+<li>随机选择一个起点，并将其加入到$V_{new}$中。</li>
+<li>同时，更新此时的$lowcost$和$v$，遍历$lowcost$，寻找$lowcost$中的最小值$min$（假设索引为 $j$ ），将与索引 $j$ 相对应的节点加入到$V_{new}$中，更新$lowcost[j]$和$v[j]$。</li>
+<li>找到最小值 $j$后，此时$lowcost$中的所有节点都要更新，因为此时$V_{new}$节点增加了，V集合中的节点离$V_{new}$集合的距离可能会缩短。此时已更新完所有的$lowcost$。</li>
+<li>重复步骤2,直到访问了所有的节点。我</li>
+</ul>
+<p>Prim算法的具体代码结构如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Prim</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; points,<span class="keyword">int</span> start)</span></span>&#123;</span><br><span class="line">        <span class="comment">//初始化结构</span></span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">size</span> = points.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">v</span><span class="params">(<span class="built_in">size</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">lowcost</span><span class="params">(<span class="built_in">size</span>,INT_MAX)</span></span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; vnew;</span><br><span class="line">        vnew.resize(<span class="built_in">size</span>);</span><br><span class="line">        vnew[start] = points[start];</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>; <span class="comment">//计算最短路径长</span></span><br><span class="line">        v[start] = <span class="number">-1</span>; <span class="comment">//加入规定的起点</span></span><br><span class="line">    	<span class="keyword">int</span> flag = start; <span class="comment">//用于判断是否为起点</span></span><br><span class="line">        <span class="comment">//初始化lowcost</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="built_in">size</span>;i++)&#123;</span><br><span class="line">            <span class="comment">//if (i == start)continue;</span></span><br><span class="line">            <span class="comment">//此处使用的为曼哈盾距离，可以替换为其他的距离函数，后面同理</span></span><br><span class="line">            lowcost[i] = manhatt(points[i],points[start]); </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//找出最近的点</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="built_in">size</span>;i++)&#123;</span><br><span class="line">            <span class="comment">//一定要把起点排除，否则会产生无穷长路径</span></span><br><span class="line">            <span class="keyword">if</span> (i == flag)<span class="keyword">continue</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//找出V中离Vnew最近的点</span></span><br><span class="line">            <span class="keyword">int</span> minIndex = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">int</span> minValue = INT_MAX;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; <span class="built_in">size</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (v[j] == <span class="number">-1</span>)<span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span> (minValue &gt; lowcost[j])&#123;</span><br><span class="line">                    minIndex = j;</span><br><span class="line">                    minValue = lowcost[j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//cout&lt;&lt;minValue&lt;&lt;endl;</span></span><br><span class="line">            ans+=minValue;</span><br><span class="line">            vnew[++start] = points[minIndex];</span><br><span class="line">            v[minIndex] = <span class="number">-1</span>;</span><br><span class="line">            lowcost[minIndex] = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//更新lowcost</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; <span class="built_in">size</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (v[j] == <span class="number">0</span> &amp;&amp; lowcost[j] &gt; manhatt(points[j],vnew[start]))&#123;</span><br><span class="line">                    lowcost[j] = manhatt(points[j],vnew[start]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans; <span class="comment">//返回路径长</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>Prim算法的时间复杂度为$O(n*n)$，空间复杂度为$O(n)$ </p>
+</li>
+<li><p><strong>Kruskal</strong>算法</p>
+<p>Prim算法强调以点为基准，而Kruskal算法则以边为基准。Kruskal的结构元素与Prim算法类似。不同的是Kruskal算法需要每次从边集合中寻找最小的边（不管两个顶点属于$V$还是$V_{new}$ ），然后判断该边的两个顶点是否属于同一个连通图。 </p>
+<p>Kruskal需要我们对边进行排序，同时需要知道边的两边所连接的端点，所以可以建立如下的结构体：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">VP</span>&#123;</span></span><br><span class="line">    <span class="built_in">point</span> p1; <span class="comment">//点1的信息</span></span><br><span class="line">    <span class="built_in">point</span> p2; <span class="comment">//点2的信息</span></span><br><span class="line">    <span class="keyword">int</span> value; <span class="comment">//边的权值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这一结构可称为点-边式结构</p>
+<p>Kruskal算法的过程如下：</p>
+<ul>
+<li>初始化：将图（邻接矩阵或邻接表）转换成点-边式，并对点-边式按边长度进行排序。同时，初始化并查集。并查集的应用在这里先不进行赘述。</li>
+<li>依次遍历所有的点-边式，取最小值。</li>
+<li>作如下判断：如果该点-边式的两个顶点同源，跳过;如果该点-边式的两个顶点不同源，则将这两个源（连通分量）合并</li>
+<li>重复步骤2,直到存在一个连通分量，包含了所有的节点</li>
+</ul>
+<p>Kruskal代码结构如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//溯源根节点</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; parent)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x != parent[x])&#123;</span><br><span class="line">            x = <span class="built_in">find</span>(parent[x],parent);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> parent[x];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">Kruskal</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; points)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">size</span> = points.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;VP&gt; vps;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//建立点-边式结构</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="built_in">size</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; <span class="built_in">size</span>;j++)&#123;</span><br><span class="line">                VP vp = &#123;i,j,manhatt(points[i],points[j])&#125;;</span><br><span class="line">                vps.push_back(vp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//进行排序</span></span><br><span class="line">        sort(vps.<span class="built_in">begin</span>(),vps.<span class="built_in">end</span>(),[](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;a,<span class="keyword">const</span> <span class="keyword">auto</span> &amp;b)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.length &lt; b.length;&#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//初始化并查集</span></span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">parent</span><span class="params">(<span class="built_in">size</span>)</span></span>; <span class="comment">//记录根节点(下标代表节点)</span></span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">pnums</span><span class="params">(<span class="built_in">size</span>,<span class="number">1</span>)</span></span>; <span class="comment">//记录连通分量的节点个数</span></span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">len</span><span class="params">(<span class="built_in">size</span>,<span class="number">0</span>)</span></span>; <span class="comment">//记录连通分量里所有边的长度</span></span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">rank</span><span class="params">(<span class="built_in">size</span>)</span></span>; <span class="comment">//普通的遍历算法会超时，需要进行剪枝</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="built_in">size</span>;i++)&#123;</span><br><span class="line">            parent[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//查找最终的连通路</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; vps.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            <span class="comment">//合并并查集</span></span><br><span class="line">            <span class="keyword">int</span> rootx = <span class="built_in">find</span>(vps[i].sp,parent);</span><br><span class="line">            <span class="keyword">int</span> rooty = <span class="built_in">find</span>(vps[i].ep,parent);</span><br><span class="line">            <span class="comment">//判断两者父节点是否一致</span></span><br><span class="line">            <span class="keyword">if</span> (rooty != rootx)&#123;</span><br><span class="line">                <span class="keyword">if</span> (rank[rootx] &lt; rank[rooty])&#123;</span><br><span class="line">                    swap(rootx,rooty);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//rooty的父节点设置为rootx,同时将rooty的节点数和边长度累加到rootx</span></span><br><span class="line">                parent[rooty] = rootx;</span><br><span class="line">                <span class="keyword">if</span> (rank[rootx] == rank[rooty])rank[rootx]++;</span><br><span class="line">                pnums[rootx]+=pnums[rooty];</span><br><span class="line">                len[rootx]+=len[rooty]+vps[i].length;</span><br><span class="line">                <span class="comment">// 如果某个连通分量的节点数 包含了所有节点，直接返回边长度</span></span><br><span class="line">                <span class="keyword">if</span> (pnums[rootx] == <span class="built_in">size</span>)<span class="keyword">return</span> len[rootx];</span><br><span class="line">            &#125;</span><br><span class="line">            ans = <span class="number">-1</span>; <span class="comment">//错误</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>Kruskal时间复杂度为 $O(nlog(n) + m α(m) )$，$m$为索引对数量，空间复杂度为$O(n)$ </p>
+</li>
+</ul>
+<p>可以看出Kruskal的运行时间在Prim的基础上加入了边数量的影响，即使点的数目不多，边庞大的数目也会导致Krsukal的运行速度显著慢于Prim，故Kruskal需要进行优化操作来得到一个较好的结果。</p>
 
       
 	  
@@ -268,7 +294,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-脚本工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-算法 -数据结构</a>
         		</li>
       		
 		</ul>
@@ -324,7 +350,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -338,18 +364,9 @@
   
 <nav id="article-nav">
   
-    <a href="/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          算法学习笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/git%E8%BF%9C%E7%A8%8B%E4%B8%8A%E4%BC%A0%E9%A1%B9%E7%9B%AE%E5%B8%B8%E7%94%A8%E6%96%B9%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git远程上传项目常用方式</div>
+    <a href="/%E7%BD%91%E9%A1%B5%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E5%BF%83%E5%BE%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网页脚本编写心得</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -376,7 +393,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%8F%92%E4%BB%B6%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9"><span class="toc-number">1.</span> <span class="toc-text">1.插件工具选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">2.脚本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99"><span class="toc-number">3.</span> <span class="toc-text">3.脚本编写</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#2021-1-19%E2%80%94%E2%80%94%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">2021&#x2F;1&#x2F;19——最小生成树</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -392,7 +409,7 @@
   
 
   
-  <div id="SOHUCS" sid="网页脚本编写心得" ></div> 
+  <div id="SOHUCS" sid="算法学习笔记" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
